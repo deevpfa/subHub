@@ -1,0 +1,159 @@
+@import url(./animation.scss);
+
+.message-container {
+	position: fixed;
+	inset: 0;
+	z-index: 9999;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 1rem;
+	pointer-events: none;
+
+	&.top-left {
+		align-items: flex-start;
+		justify-content: flex-start;
+
+		& .message {
+			animation-name: SlideLeftIn;
+
+			&.closed {
+				animation-name: SlideLeftOut;
+			}
+		}
+	}
+
+	&.top-right {
+		justify-content: flex-start;
+		align-items: flex-end;
+
+		& .message {
+			animation-name: SlideRightIn;
+
+			&.closed {
+				animation-name: SlideRightOut;
+			}
+		}
+	}
+
+	&.top-center {
+		justify-content: flex-start;
+		align-items: center;
+
+		& .message {
+			animation-name: SlideTopIn;
+
+			&.closed {
+				animation-name: SlideTopOut;
+			}
+		}
+	}
+
+	&.bottom-left {
+		justify-content: flex-end;
+		align-items: flex-start;
+
+		& .message {
+			animation-name: SlideLeftIn;
+
+			&.closed {
+				animation-name: SlideLeftOut;
+			}
+		}
+	}
+
+	&.bottom-right {
+		justify-content: flex-end;
+		align-items: flex-end;
+
+		& .message {
+			animation-name: SlideRightIn;
+
+			&.closed {
+				animation-name: SlideRightOut;
+			}
+		}
+	}
+
+	&.bottom-center {
+		justify-content: flex-end;
+		align-items: center;
+
+		& .message {
+			animation-name: SlideBottomIn;
+
+			&.closed {
+				animation-name: SlideBottomOut;
+			}
+		}
+	}
+
+	& .message {
+		width: 100%;
+		max-width: 300px;
+		position: relative;
+		background-color: #fff;
+		padding: 0.75rem 1rem;
+		border-radius: 0.5rem;
+		border: 1px solid #e3e3e3;
+		pointer-events: auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		animation-duration: 300ms;
+		animation-fill-mode: forwards;
+		box-sizing: border-box;
+
+		& .message-icon {
+			margin-right: 0.5rem;
+			width: 1.5rem;
+			height: 1.5rem;
+		}
+
+		& .message-content {
+			flex-grow: 1;
+		}
+
+		& .message-close {
+			cursor: pointer;
+		}
+
+		&.success {
+			color: #155724;
+			background-color: #d4edda;
+			border-color: #c3e6cb;
+		}
+
+		&.error {
+			color: #721c24;
+			background-color: #f8d7da;
+			border-color: #f5c6cb;
+		}
+
+		&.warning {
+			color: #856404;
+			background-color: #fff3cd;
+			border-color: #ffeeba;
+		}
+
+		&.info {
+			color: #0c5460;
+			background-color: #d1ecf1;
+			border-color: #bee5eb;
+		}
+
+		.message-content {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			.message-text {
+				margin-right: 1rem;
+			}
+
+			.message-close {
+				cursor: pointer;
+			}
+		}
+	}
+}
